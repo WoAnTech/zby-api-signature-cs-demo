@@ -1,0 +1,18 @@
+﻿<Window x:Class="WoanSignatureTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="655" Width="542">
+    <Grid>
+        <Button Content="GET测试" HorizontalAlignment="Left" Margin="31,26,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="POST测试" HorizontalAlignment="Left" Margin="31,63,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="挑战认证测试" HorizontalAlignment="Left" Margin="31,172,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <TextBox x:Name="pwd" HorizontalAlignment="Left" Height="23" Margin="273,107,0,0" TextWrapping="Wrap" Text="123456" VerticalAlignment="Top" Width="120"/>
+        <Label Content="用户密码" HorizontalAlignment="Left" Margin="30,107,0,0" VerticalAlignment="Top" Width="208" Height="25"/>
+        <TextBox x:Name="challengestr" HorizontalAlignment="Left" Height="23" Margin="276,142,0,0" TextWrapping="Wrap" Text="4d0606d422bed2376f2c22ba268a1cf2" VerticalAlignment="Top" Width="231"/>
+        <Label Content="challenge（视频服务器返回）" HorizontalAlignment="Left" Margin="31,142,0,0" VerticalAlignment="Top" Width="222"/>
+        <Label Content="此处代码中调用的是task_list接口" HorizontalAlignment="Left" Margin="120,23,0,0" VerticalAlignment="Top" Width="355"/>
+        <Label Content="此处代码中调用的是management接口" HorizontalAlignment="Left" Margin="120,60,0,0" VerticalAlignment="Top" Width="355"/>
+        <Label Content="鉴权通知，视频开始，停止，存档通知编写方法如下：&#xD;&#xA;1、新建webservice工程&#xD;&#xA;2、public class VideoNotify : System.Web.Services.WebService&#xD;&#xA;    {&#xD;&#xA;        [WebMethod]&#xD;&#xA;        public string LiveStart()&#xD;&#xA;        {&#xD;&#xA;            Stream postData = HttpContext.Current.Request.InputStream;&#xD;&#xA;            StreamReader sRead = new StreamReader(postData);&#xD;&#xA;            string postContent = sRead.ReadToEnd();&#xD;&#xA;            sRead.Close();&#xD;&#xA;            FileStream fs = new FileStream(&quot;D:\\tt\\A.txt&quot;, FileMode.CreateNew);&#xD;&#xA;            StreamWriter sw = new StreamWriter(fs, Encoding.Default);&#xD;&#xA;            sw.Write(postContent);&#xD;&#xA;            sw.Close();&#xD;&#xA;            fs.Close();&#xD;&#xA;            return postContent;&#xD;&#xA;        }&#xD;&#xA;    }&#xA;备注：以上代码是收到服务器的通知，然后将内容输出到文件中，用户可以自行解析&#xD;&#xA;收到的内容，通知内容以json格式发送给接口。" HorizontalAlignment="Left" Margin="30,208,0,0" VerticalAlignment="Top" Width="467" Height="395"/>
+
+    </Grid>
+</Window>
